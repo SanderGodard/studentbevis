@@ -1,0 +1,231 @@
+:root {
+  --profile-pic: url("./cecilie.jpg");
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material {
+    font-family: 'Material Icons';
+    line-height: 1;
+    font-size: 1.4em;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+}
+* {
+    box-sizing: border-box;
+}
+body, html {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 0.9em;
+    scroll-behavior: smooth;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+nav {
+    font-weight: bold;
+    background-color: transparent;
+    color: black;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 60px; */
+    font-size: 1.8em;
+    font-weight: lighter;
+}
+nav * {
+    padding: 20px 15px 0;
+}
+.backdrop {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    background-color: #EDC124;
+    min-height: 100vh;
+}
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    height: auto;
+    flex-grow: 1;
+}
+.persona {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.persona .imagebox {
+    transition: transform .25s ease-in-out;
+    width: 50%;
+    border-radius: 100%;
+    margin: auto;
+
+}
+.persona .imagebox::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-image: var(--profile-pic);
+    background-position-y: -65px;
+    position: relative;
+}
+.persona .text {
+    margin: 2.5em 0;
+}
+.persona .text > * {
+    transition: opacity .3s ease;
+}
+.text {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    align-self: center;
+}
+.text > * {
+    font-size: 1em;
+    padding: .2em 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.card {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 15px 15px 0 0;
+    padding: 15px 15px 0;
+    height: auto;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.card button, .card .text {
+    z-index: 2;
+}
+.downwards {
+    border-radius: 0 0 15px 15px;
+    flex-grow: 0;
+}
+.card > .text {
+    margin: 1em 0;
+}
+.tiny {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin: 15px 0 5px;
+    font-size: .8em;
+    color: #444;
+}
+.center {
+    text-align: center;
+    align-self: center;
+}
+#validBtn {
+    transition: background-color .1s ease;
+    width: 100%;
+    background-color: #285C33;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 15px;
+    font-size: 1.1em;
+    z-index: 2;
+    position: relative;
+}
+#validBtn:active {
+    background-color: #326037;
+    transition: background-color .1s ease;
+}
+.split {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.split > * {
+    display: block;
+}
+img {
+    display: block;
+}
+b {
+    font-weight: bolder;
+}
+#modal {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    flex-flow: column nowrap;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    height: 100vh;
+
+}
+#modal .card > * {
+    width: 90%;
+}
+#modal img {
+    margin: auto;
+    object-fit: cover;
+    max-height: 10em;
+}
+#modal .text {
+    margin: 1.2em auto 0;
+}
+#closeBtn {
+    background-color: #EDC124;
+    border-radius: 4px;
+    padding: 25px;
+    font-size: .9em;
+    border: none;
+    margin: 2.5em auto 3em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+.caps {
+  animation: float 3s ease-in-out infinite;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+}
+
+.caps-right {
+  animation: float-right 3s ease-in-out infinite;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+}
+
+@keyframes float {
+  50% {
+        transform: translate(calc(20vw - 300%), calc(500%)) rotate(45deg);
+    }
+}
+
+@keyframes float-right {
+  50% {
+        transform: translate(calc(80vw - 300%), calc(100%)) rotate(-45deg);
+    }
+}

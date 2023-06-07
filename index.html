@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>StudentID</title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer type="text/javascript" src="main.js">
+
+        </script>
+    </head>
+    <body>
+        <div class="backdrop">
+            <nav>
+                <img src="baricon.png" id="barcodeButton" alt="">
+                <!-- <a href="#" class="material" id="barcodeButton">menu</a> -->
+                <a href="#" class="material" id="menu">more_vert</a>
+            </nav>
+            <main>
+                <div class="persona">
+                    <div class="imagebox">
+                    </div>
+                    <div class="text">
+                        <b class="info">Navn Navnesen</b>
+                        <p class="info">01.01.1901</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="text">
+                        <b><span class="school">Norwegian University of Science and Technology</span></b>
+                        <p>Student number: <span class="studNr">000000</span></p>
+                    </div>
+                    <div>
+                        <button type="button" id="validBtn" name="button">
+                            <div class="text">
+                                <p>Valid semester receipt</p>
+                                <b><span id="semesterName"></span></b>
+                            </div>
+                        </button>
+                        <p class="tiny center">Valid from <span id="fromDate">01.01.1901</span> to <span id="toDate">01.01.1901</span></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="modal" style="display: none;">
+            <div class="card downwards">
+                <img src="bars.png">
+                <div class="text tiny">
+                    <p><span class="studNr">000000</span></p>
+                    <p><span class="school">Norwegian University of Science and Technology</span></p>
+                </div>
+                <button type="button" id="closeBtn" name="button">Close</button>
+            </div>
+        </div>
+    </body>
+</html>
